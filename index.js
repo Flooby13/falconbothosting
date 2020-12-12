@@ -284,8 +284,6 @@ function proccessCommand(receivedMessage) {
         whoisCommand(arguments, receivedMessage)
     } else if (primaryCommand == "av") {
         avCommand(arguments, receivedMessage)
-    } else if (primaryCommand == "ban") {
-        banCommand(arguments, receivedMessage)
     } else if (primaryCommand == "hug") {
         hugCommand(arguments, receivedMessage)
     } else if (primaryCommand == "jail") {
@@ -308,59 +306,6 @@ function proccessCommand(receivedMessage) {
         biteCommand(arguments, receivedMessage)
     }
 }
-
-function banCommand(arguments, receivedMessage) {
-    if (arguments.length < 1) {
-        receivedMessage.channel.send("No user or ID provided. I can't ban thin air!")
-    }
-    if (arguments.length > 1) {
-        let message = receivedMessage
-        let args = arguments
-        if (!message.member.hasPermission("BAN_MEMBERS")) return message.channel.send("Invalid Permissions")
-        let User = message.guild.member(message.mentions.users.first()) || message.guild.members.get(args[0])
-        if (!User) return message.channel.send("Invalid User")
-        if (User.hasPermission("BAN_MEMBERS")) return message.reply("I can't ban a mod/admin.")
-        let banReason = args.join(" ").slice(22);
-        if (!banReason) {            
-            banReason = "None"
-        }
-        User.ban({reason: banReason})
-        message.channel.send({embed: {
-            color: 3447003,
-            author: {
-                name: message.author.tag, 
-                icon_url: receivedMessage.author.avatarURL()
-            },
-            title: ("Banned " + receivedMessage.guild.member(message.mentions.users.first())),
-            description: ("Ban reason: " + banReason)
-        }})
-    }
-    if (arguments.length == 1) {
-        let message = receivedMessage
-        let args = arguments
-        if (!message.member.hasPermission("BAN_MEMBERS")) return message.channel.send("Invalid Permissions")
-        let User = message.guild.member(message.mentions.users.first()) || message.guild.members.get(args[0])
-        if (!User) return message.channel.send("Invalid User")
-        if (User.hasPermission("BAN_MEMBERS")) return message.reply("I can't ban a mod/admin.")
-        let banReason = args.join(" ").slice(22);
-        if (!banReason) {            
-            banReason = "None"
-        }
-        User.ban({reason: banReason})
-        message.channel.send({embed: {
-            color: 3447003,
-            author: {
-                name: message.author.tag, 
-                icon_url: receivedMessage.author.avatarURL()
-            },
-            title: ("Banned " + receivedMessage.guild.member(message.mentions.users.first())),
-            description: ("Ban reason: " + banReason)
-        
-        }})
-    }
-}
-
-
 
 
 
@@ -826,7 +771,7 @@ function helpCommand(arguments, receivedMessage) {
           },
           {
               name: "**Music Commands** (note these commands have 30 second delays)",
-              value: "`play`, `skip`, `stop`"
+              value: "`play`, `skip`, `stop`, `loop all`, `loop one`, `loop off`, `queue`, `pause`, `resume`"
           }
         ],
         timestamp: new Date(),
