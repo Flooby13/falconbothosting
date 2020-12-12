@@ -759,7 +759,7 @@ function helpCommand(arguments, receivedMessage) {
         description: "__Please note that this bot is completely ran for free and cannot be running 24/7, please don't be mad!__",
         fields: [{
             name: "**General Commands**",
-            value: "`help`, `av`, `ban`,"
+            value: "`help`, `av`"
           },
           {
             name: "**Fun Commands**",
@@ -770,7 +770,7 @@ function helpCommand(arguments, receivedMessage) {
               value: "`hug`, `pounce`, `smacc`, `tail`, `pat`, `beans`, `poke`, `snuggle`, `boop`, `nom`, `lick`, `bite`"
           },
           {
-              name: "**Music Commands** (note these commands have 30 second delays)",
+              name: "**Music Commands**",
               value: "`play`, `skip`, `stop`, `loop all`, `loop one`, `loop off`, `queue`, `pause`, `resume`"
           }
         ],
