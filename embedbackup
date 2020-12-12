@@ -1,0 +1,29 @@
+    if (arguments.length < 1) {
+        receivedMessage.channel.send({embed: {
+            color: 3447003,
+            Author: {
+                name: client.user.name,
+                icon_url: client.user.avatarURL
+            },
+            title: "**Falcon Command List**",
+            description: "__Please note that this bot is ran completely for free and we do NOT use servers to run the bot, meaning it won't be online 24/7.__",
+            fields: [{
+                name: "**-help**",
+                value: "*Displays this message*",
+            }
+        }})
+    }
+}
+
+//MESSAGE LOG BACKUP
+
+message.channel.send({embed: {
+                color: 3447003,
+                author: {
+                    name: '',
+                    icon_url: '',
+                },
+                description: (`Now playing ${song.title} | [<@!${message.author.id}>] | **NOTE THERE MAY BE A DELAY.**`),
+                url: (song.url),
+                }
+            });
