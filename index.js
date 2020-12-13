@@ -310,18 +310,24 @@ function proccessCommand(receivedMessage) {
 }
 
 
-function inviteCommand(receivedMessage) {
-    receivedMessage.channel.send({embed: {
-        color: 3447003,
-        author: {
-            name: '',
-            icon_url: '',
-        },
-        title: 'Falcon Bot Invite Link',
-        description: "Thanks for considering inviting falcon to your server!",
-        url: "https://discord.com/oauth2/authorize?client_id=785603111225655316&scope=bot&permissions=8"
+function inviteCommand(arguments, receivedMessage) {
+    
+    if (arguments.length < 1) {
+        receivedMessage.channel.send({embed: {
+            color: 3447003,
+            author: {
+                name: '',
+                icon_url: '',
+            },
+            title: 'Falcon Bot Invite Link',
+            description: "Thanks for considering inviting falcon to your server!",
+            url: "https://discord.com/oauth2/authorize?client_id=785603111225655316&scope=bot&permissions=8"
+        }
+        });
     }
-    });
+    if (arguments.length > 0) {
+        receivedMessage.channel.send("Too many arguments provided.")
+    }
 }
 
 
