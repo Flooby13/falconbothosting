@@ -311,7 +311,7 @@ function proccessCommand(receivedMessage) {
 
 
 function testCommand(arguments, receivedMessage) {
-    receivedMessage.channel.send(`[Testing](https://https://discord.com/oauth2/authorize?client_id=785603111225655316&scope=bot&permissions=8)`)
+    receivedMessage.channel.send(`[Testing](https://discord.com/oauth2/authorize?client_id=785603111225655316&scope=bot&permissions=8)`)
 }
 
 
