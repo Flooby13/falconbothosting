@@ -304,9 +304,15 @@ function proccessCommand(receivedMessage) {
         nomCommand(arguments, receivedMessage) 
     }else if (primaryCommand == "bite") {
         biteCommand(arguments, receivedMessage)
+    }else if (primaryCommand = "test") {
+        testCommand(arguments, receivedMessage)
     }
 }
 
+
+function testCommand(arguments, receivedMessage) {
+    receivedMessage.channel.send(`[Testing](https://https://discord.com/oauth2/authorize?client_id=785603111225655316&scope=bot&permissions=8)`)
+}
 
 
 function avCommand(arguments, receivedMessage) {
@@ -771,7 +777,7 @@ function helpCommand(arguments, receivedMessage) {
           },
           {
               name: "**Music Commands**",
-              value: "`play`, `skip`, `stop`, `loop all`, `loop one`, `loop off`, `queue`, `pause`, `resume`"
+              value: "`play`, `skip`, `stop`, `loop one`, `loop off`, `queue`, `pause`, `resume`"
           }
         ],
         timestamp: new Date(),
