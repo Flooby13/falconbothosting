@@ -248,7 +248,7 @@ client.on('message', (receivedMessage) => {
     if (receivedMessage.content.startsWith(prefix)) {
         proccessCommand(receivedMessage)
     }
-    if (receivedMessage.content == "<@!786038750470733855>") {
+    if (receivedMessage.content.includes("<@!786038750470733855>")) {
         receivedMessage.channel.send("Hello! My prefix is '-'")
     }
     if (receivedMessage.content == "fuck") {
@@ -306,7 +306,9 @@ function proccessCommand(receivedMessage) {
         biteCommand(arguments, receivedMessage)
     } else if (primaryCommand = "invite") {
         inviteCommand(arguments, receivedMessage)
+
     }
+
 }
 
 
