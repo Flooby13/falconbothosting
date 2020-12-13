@@ -7,7 +7,7 @@ const config = require('./config.json')
 const { YTSearcher } = require('ytsearcher');
 
 const searcher = new YTSearcher({
-    key: process.env.youtube_api,
+    key: "AIzaSyCv2zRLLHekyVqUuHVCOeF9iSE8L4gG7XA",
     revealed : true
 });
 
@@ -311,7 +311,17 @@ function proccessCommand(receivedMessage) {
 
 
 function testCommand(arguments, receivedMessage) {
-    receivedMessage.channel.send(['Testing']('https://discord.com/oauth2/authorize?client_id=785603111225655316&scope=bot&permissions=8'))
+    receivedMessage.channel.send({embed: {
+        color: 3447003,
+        author: {
+            name: '',
+            icon_url: '',
+        },
+        title: 'Falcon Bot Invite Link',
+        description: "Thanks for considering inviting falcon to your server!",
+        url: "https://discord.com/oauth2/authorize?client_id=785603111225655316&scope=bot&permissions=8"
+    }
+    });
 }
 
 
@@ -793,4 +803,4 @@ function offCommand(receivedMessage, arguments) {
     console.clear
 }
 
-client.login(process.env.token)
+client.login('Nzg1NjAzMTExMjI1NjU1MzE2.X86P6Q.G9W-09uHkB0SHW2Gs7_fvDXTLfw')
