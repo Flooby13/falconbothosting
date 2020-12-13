@@ -302,15 +302,15 @@ function proccessCommand(receivedMessage) {
         lickCommand(arguments, receivedMessage)
     } else if (primaryCommand == "nom") {
         nomCommand(arguments, receivedMessage) 
-    }else if (primaryCommand == "bite") {
+    } else if (primaryCommand == "bite") {
         biteCommand(arguments, receivedMessage)
-    }else if (primaryCommand = "invite") {
+    } else if (primaryCommand = "invite") {
         inviteCommand(arguments, receivedMessage)
     }
 }
 
 
-function inviteCommand(arguments, receivedMessage) {
+function inviteCommand(receivedMessage) {
     receivedMessage.channel.send({embed: {
         color: 3447003,
         author: {
