@@ -7,7 +7,7 @@ const config = require('./config.json')
 const { YTSearcher } = require('ytsearcher');
 
 const searcher = new YTSearcher({
-    key: "AIzaSyCv2zRLLHekyVqUuHVCOeF9iSE8L4gG7XA",
+    key: process.env.youtube_api,
     revealed : true
 });
 
@@ -803,4 +803,4 @@ function offCommand(receivedMessage, arguments) {
     console.clear
 }
 
-client.login('Nzg1NjAzMTExMjI1NjU1MzE2.X86P6Q.G9W-09uHkB0SHW2Gs7_fvDXTLfw')
+client.login(process.env.token)
