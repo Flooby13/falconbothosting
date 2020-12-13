@@ -304,8 +304,8 @@ function proccessCommand(receivedMessage) {
         nomCommand(arguments, receivedMessage) 
     }else if (primaryCommand == "bite") {
         biteCommand(arguments, receivedMessage)
-    }else if (primaryCommand = "test") {
-        testCommand(arguments, receivedMessage)
+    }else if (primaryCommand = "invite") {
+        inviteCommand(arguments, receivedMessage)
     }
 }
 
@@ -775,7 +775,7 @@ function helpCommand(arguments, receivedMessage) {
         description: "__Please note that this bot is completely ran for free and cannot be running 24/7, please don't be mad!__",
         fields: [{
             name: "**General Commands**",
-            value: "`help`, `av`"
+            value: "`help`, `av`, `invite`"
           },
           {
             name: "**Fun Commands**",
