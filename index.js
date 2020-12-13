@@ -310,7 +310,7 @@ function proccessCommand(receivedMessage) {
 }
 
 
-function testCommand(arguments, receivedMessage) {
+function inviteCommand(arguments, receivedMessage) {
     receivedMessage.channel.send({embed: {
         color: 3447003,
         author: {
