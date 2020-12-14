@@ -304,32 +304,8 @@ function proccessCommand(receivedMessage) {
         nomCommand(arguments, receivedMessage) 
     } else if (primaryCommand == "bite") {
         biteCommand(arguments, receivedMessage)
-    } else if (primaryCommand = "invite") {
-        inviteCommand(arguments, receivedMessage)
-
     }
 
-}
-
-
-function inviteCommand(arguments, receivedMessage) {
-    
-    if (arguments.length < 1) {
-        receivedMessage.channel.send({embed: {
-            color: 3447003,
-            author: {
-                name: '',
-                icon_url: '',
-            },
-            title: 'Falcon Bot Invite Link',
-            description: "Thanks for considering inviting falcon to your server!",
-            url: "https://discord.com/oauth2/authorize?client_id=785603111225655316&scope=bot&permissions=8"
-        }
-        });
-    }
-    if (arguments.length > 0) {
-        receivedMessage.channel.send("Too many arguments provided.")
-    }
 }
 
 
@@ -796,6 +772,10 @@ function helpCommand(arguments, receivedMessage) {
           {
               name: "**Music Commands**",
               value: "`play`, `skip`, `stop`, `loop one`, `loop off`, `queue`, `pause`, `resume`"
+          },
+          {
+              name: "Falcon Bot Invite Link",
+              value: `Thanks for using Falcon, please spread the word! Click [here](https://discord.com/oauth2/authorize?client_id=785603111225655316&scope=bot&permissions=8) to invite the bot to your server!`,
           }
         ],
         timestamp: new Date(),
@@ -811,4 +791,4 @@ function offCommand(receivedMessage, arguments) {
     console.clear
 }
 
-client.login(process.env.token)
+client.login('Nzg1NjAzMTExMjI1NjU1MzE2.X86P6Q.L5xEzn9HQ86_oNaD17zf2z7tUgk')
