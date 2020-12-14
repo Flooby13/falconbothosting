@@ -8,7 +8,7 @@ const { YTSearcher } = require('ytsearcher');
 
 const searcher = new YTSearcher({
     key: process.env.youtube_api,
-    revealed : true
+    revealed: true
 });
 
 
@@ -17,7 +17,7 @@ const queue = new Map();
 client.on('ready', () => {
     console.log("Connected as " + client.user.tag)
 
-    client.user.setActivity("-help", {type: "LISTENING"})
+    client.user.setActivity(`for -help | ${client.guilds.cache.size} servers!`, {type: "WATCHING"})
 
     client.guilds.cache.forEach((guild) => {
         console.log(guild.name)
@@ -33,7 +33,7 @@ client.on('ready', () => {
 })
 
 client.on("message", async(message) => {
-    const prefix = '!';
+    const prefix = '-';
  
     const serverQueue = queue.get(message.guild.id);
  
@@ -106,11 +106,10 @@ client.on("message", async(message) => {
                 return message.channel.send({embed: {
                     color: 3447003,
                     author: {
-                        name: '',
+                        name: 'Queued',
                         icon_url: '',
                     },
-                    description: (`Queueing ${song.title} | [<@!${message.author.id}>]
-                     **NOTE THERE MAY BE A DELAY.**`),
+                    description: (`[${song.title}](${song.url}) [<@!${message.author.id}>]`),
                     }
                 });
             }
@@ -140,11 +139,10 @@ client.on("message", async(message) => {
             message.channel.send({embed: {
                 color: 3447003,
                 author: {
-                    name: '',
+                    name: 'Now Playing',
                     icon_url: '',
                 },
-                description: (`Now playing ${song.title} | [<@!${message.author.id}>]
-                 **NOTE THERE MAY BE A DELAY.**`),
+                description: (`[${song.title}](${song.url}) [<@!${message.author.id}>]`),
                 url: (song.url),
                 }
             });
@@ -756,7 +754,7 @@ function helpCommand(arguments, receivedMessage) {
           icon_url: receivedMessage.author.avatarURL()
         },
         title: "Falcon Command List",
-        description: "__Please note that this bot is completely ran for free and cannot be running 24/7, please don't be mad!__",
+        description: "Thanks for using Falcon, please spread the word! Click [here](https://discord.com/oauth2/authorize?client_id=785603111225655316&scope=bot&permissions=8) to invite the bot to your server!",
         fields: [{
             name: "**General Commands**",
             value: "`help`, `av`, `invite`"
