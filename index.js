@@ -791,4 +791,4 @@ function offCommand(receivedMessage, arguments) {
     console.clear
 }
 
-client.login('Nzg1NjAzMTExMjI1NjU1MzE2.X86P6Q.L5xEzn9HQ86_oNaD17zf2z7tUgk')
+client.login(process.env.token)
